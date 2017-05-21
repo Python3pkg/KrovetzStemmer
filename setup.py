@@ -2,7 +2,7 @@ from distutils.sysconfig import get_config_vars
 from distutils.core import setup, Extension
 
 cfg_vars = get_config_vars()
-for key, value in cfg_vars.items():
+for key, value in list(cfg_vars.items()):
     if type(value) == str:
         cfg_vars[key] = value.replace("-Wstrict-prototypes", "")
 
